@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleDude - Ultimate Men's Fashion Directory</title>
+    <meta name="description" content="StyleDude - Your global men's fashion navigator. Discover luxury brands, streetwear, and style inspiration worldwide.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QEV4V4SF6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5QEV4V4SF6');
+    </script>
+    <style>
+        .nav-item:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const translations = {
+                en: {
+                    siteTitle: "StyleDude",
+                    siteSubtitle: "Men's Style Directory",
+                    nav: {
+                        inspiration: "Style Inspiration",
+                        shopping: "Shopping",
+                        guides: "Style Guides",
+                        community: "Community"
+                    },
+                    hero: {
+                        title: "Discover Your Style",
+                        subtitle: "Explore the best men's fashion resources worldwide"
+                    },
+                    sections: {
+                        inspiration: {
+                            title: "Style Inspiration",
+                            subtitle: "Get inspired by the best fashion content"
+                        },
+                        shopping: {
+                            title: "Where to Shop",
+                            subtitle: "Curated shopping destinations"
+                        },
+                        guides: {
+                            title: "Style Guides",
+                            subtitle: "Learn how to dress better"
+                        },
+                        community: {
+                            title: "Community & Forums",
+                            subtitle: "Join the conversation"
+                        }
+                    }
+                },
+                cn: {
+                    siteTitle: "StyleDude",
+                    siteSubtitle: "男士时尚导航",
+                    nav: {
+                        inspiration: "时尚灵感",
+                        shopping: "购物指南",
+                        guides: "搭配攻略",
+                        community: "社区论坛"
+                    },
+                    hero: {
+                        title: "探索你的风格",
+                        subtitle: "发现全球最佳男士时尚资源"
+                    },
+                    sections: {
+                        inspiration: {
+                            title: "时尚灵感",
+                            subtitle: "获取最佳时尚内容"
+                        },
+                        shopping: {
+                            title: "购物指南",
+                            subtitle: "精选购物目的地"
+                        },
+                        guides: {
+                            title: "搭配攻略",
+                            subtitle: "学习穿搭技巧"
+                        },
+                        community: {
+                            title: "社区论坛",
+                            subtitle: "加入讨论"
+                        }
+                    }
+                }
+            };
+
+            function updateContent(lang) {
+                document.querySelectorAll('[data-translate]').forEach(element => {
+                    const path = element.getAttribute('data-translate').split('.');
+                    let translation = translations[lang];
+                    path.forEach(key => {
+                        translation = translation[key];
+                    });
+                    if (translation) {
+                        element.textContent = translation;
+                    }
+                });
+            }
+
+            const langSelect = document.getElementById('langSelect');
+            langSelect.addEventListener('change', (e) => {
+                updateContent(e.target.value);
+            });
+
+            // 初始化语言
+            updateContent('en');
+        });
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-2xl text-gray-900" data-translate="siteTitle">StyleDude</span>
+                    <span class="text-sm text-gray-500" data-translate="siteSubtitle">Men's Style Directory</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#inspiration" class="text-gray-600 hover:text-gray-900" data-translate="nav.inspiration">Style Inspiration</a>
+                        <a href="#shopping" class="text-gray-600 hover:text-gray-900" data-translate="nav.shopping">Shopping</a>
+                        <a href="#guides" class="text-gray-600 hover:text-gray-900" data-translate="nav.guides">Style Guides</a>
+                        <a href="#community" class="text-gray-600 hover:text-gray-900" data-translate="nav.community">Community</a>
+                    </div>
+                    <select id="langSelect" class="ml-4 text-sm text-gray-600 border rounded-md px-2 py-1">
+                        <option value="en">English</option>
+                        <option value="cn">中文</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-translate="hero.title">
+                Discover Your Style
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-translate="hero.subtitle">
+                Explore the best men's fashion resources worldwide
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 py-16">
+        <!-- Style Inspiration Section -->
+        <section id="inspiration" class="mb-20">
+            <h2 class="text-3xl font-bold mb-4" data-translate="sections.inspiration.title">Style Inspiration</h2>
+            <p class="text-gray-600 mb-8" data-translate="sections.inspiration.subtitle">Get inspired by the best fashion content</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="https://www.gq.com/style" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">GQ Style</h3>
+                    <p class="text-gray-600">Latest fashion trends and style advice</p>
+                </a>
+                <a href="https://www.fashionbeans.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">FashionBeans</h3>
+                    <p class="text-gray-600">Men's style guides and fashion tips</p>
+                </a>
+                <a href="https://www.highsnobiety.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">Highsnobiety</h3>
+                    <p class="text-gray-600">Streetwear and contemporary fashion</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Shopping Section -->
+        <section id="shopping" class="mb-20">
+            <h2 class="text-3xl font-bold mb-4" data-translate="sections.shopping.title">Where to Shop</h2>
+            <p class="text-gray-600 mb-8" data-translate="sections.shopping.subtitle">Curated shopping destinations</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="https://www.endclothing.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">END.</h3>
+                    <p class="text-gray-600">Premium fashion and streetwear</p>
+                </a>
+                <a href="https://www.uniqlo.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">Uniqlo</h3>
+                    <p class="text-gray-600">Quality basics and essentials</p>
+                </a>
+                <a href="https://www.farfetch.com/mens" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">Farfetch</h3>
+                    <p class="text-gray-600">Luxury and designer fashion</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Style Guides Section -->
+        <section id="guides" class="mb-20">
+            <h2 class="text-3xl font-bold mb-4" data-translate="sections.guides.title">Style Guides</h2>
+            <p class="text-gray-600 mb-8" data-translate="sections.guides.subtitle">Learn how to dress better</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="https://www.permanentstyle.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">Permanent Style</h3>
+                    <p class="text-gray-600">Classic menswear and tailoring</p>
+                </a>
+                <a href="https://putthison.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">Put This On</h3>
+                    <p class="text-gray-600">Men's style for the average guy</p>
+                </a>
+                <a href="https://www.hespokestyle.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">He Spoke Style</h3>
+                    <p class="text-gray-600">Classic and contemporary style advice</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="mb-20">
+            <h2 class="text-3xl font-bold mb-4" data-translate="sections.community.title">Community & Forums</h2>
+            <p class="text-gray-600 mb-8" data-translate="sections.community.subtitle">Join the conversation</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="https://www.reddit.com/r/malefashionadvice/" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">r/malefashionadvice</h3>
+                    <p class="text-gray-600">Reddit's largest men's fashion community</p>
+                </a>
+                <a href="https://www.styleforum.net" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">StyleForum</h3>
+                    <p class="text-gray-600">Discussion forum for fashion enthusiasts</p>
+                </a>
+                <a href="https://www.askandyaboutclothes.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
+                    <h3 class="font-semibold text-xl mb-2">Ask Andy</h3>
+                    <p class="text-gray-600">Classic menswear community</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="font-bold text-2xl mb-4" data-translate="siteTitle">StyleDude</div>
+            <p class="text-gray-400">© 2024 StyleDude. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
