@@ -6,24 +6,124 @@
     <title>StyleDude - Ultimate Men's Fashion Directory</title>
     <meta name="description" content="StyleDude - Your global men's fashion navigator. Discover luxury brands, streetwear, and style inspiration worldwide.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG086LTLHV"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QEV4V4SF6"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-WG086LTLHV');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5QEV4V4SF6');
     </script>
-    
     <style>
         .nav-item:hover {
             transform: translateY(-2px);
             transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
         .hero-gradient {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.1;
+            animation: shine 20s linear infinite;
+        }
+
+        @keyframes shine {
+            from { background-position: 0 0; }
+            to { background-position: 100% 100%; }
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%);
+            border-radius: 2px;
+        }
+
+        .nav-link {
+            position: relative;
+            color: #1e3c72;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .site-title {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .icon-gradient {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover .icon-gradient {
+            transform: scale(1.1);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .site-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover .site-logo {
+            transform: scale(1.1);
         }
     </style>
     <script>
@@ -118,22 +218,21 @@
         });
     </script>
 </head>
-    
 <body class="bg-gray-50">
     <!-- Header -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-2">
-                    <span class="font-bold text-2xl text-gray-900" data-translate="siteTitle">StyleDude</span>
+                    <span class="font-bold text-2xl site-title" data-translate="siteTitle">StyleDude</span>
                     <span class="text-sm text-gray-500" data-translate="siteSubtitle">Men's Style Directory</span>
                 </div>
                 <div class="flex items-center space-x-6">
                     <div class="hidden md:flex space-x-6">
-                        <a href="#inspiration" class="text-gray-600 hover:text-gray-900" data-translate="nav.inspiration">Style Inspiration</a>
-                        <a href="#shopping" class="text-gray-600 hover:text-gray-900" data-translate="nav.shopping">Shopping</a>
-                        <a href="#guides" class="text-gray-600 hover:text-gray-900" data-translate="nav.guides">Style Guides</a>
-                        <a href="#community" class="text-gray-600 hover:text-gray-900" data-translate="nav.community">Community</a>
+                        <a href="#inspiration" class="nav-link" data-translate="nav.inspiration">Style Inspiration</a>
+                        <a href="#shopping" class="nav-link" data-translate="nav.shopping">Shopping</a>
+                        <a href="#guides" class="nav-link" data-translate="nav.guides">Style Guides</a>
+                        <a href="#community" class="nav-link" data-translate="nav.community">Community</a>
                     </div>
                     <select id="langSelect" class="ml-4 text-sm text-gray-600 border rounded-md px-2 py-1">
                         <option value="en">English</option>
@@ -160,87 +259,123 @@
     <div class="max-w-7xl mx-auto px-4 py-16">
         <!-- Style Inspiration Section -->
         <section id="inspiration" class="mb-20">
-            <h2 class="text-3xl font-bold mb-4" data-translate="sections.inspiration.title">Style Inspiration</h2>
+            <h2 class="text-3xl font-bold mb-4 section-title" data-translate="sections.inspiration.title">Style Inspiration</h2>
             <p class="text-gray-600 mb-8" data-translate="sections.inspiration.subtitle">Get inspired by the best fashion content</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://www.gq.com/style" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">GQ Style</h3>
-                    <p class="text-gray-600">Latest fashion trends and style advice</p>
+                <a href="https://www.gq.com/style" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.gq.com/favicon.ico" alt="GQ Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">GQ Style</h3>
+                        <p class="text-gray-600">Latest fashion trends and style advice</p>
+                    </div>
                 </a>
-                <a href="https://www.fashionbeans.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">FashionBeans</h3>
-                    <p class="text-gray-600">Men's style guides and fashion tips</p>
+                <a href="https://www.fashionbeans.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.fashionbeans.com/favicon.ico" alt="FashionBeans Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">FashionBeans</h3>
+                        <p class="text-gray-600">Men's style guides and fashion tips</p>
+                    </div>
                 </a>
-                <a href="https://www.highsnobiety.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">Highsnobiety</h3>
-                    <p class="text-gray-600">Streetwear and contemporary fashion</p>
+                <a href="https://www.highsnobiety.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.highsnobiety.com/favicon.ico" alt="Highsnobiety Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Highsnobiety</h3>
+                        <p class="text-gray-600">Streetwear and contemporary fashion</p>
+                    </div>
                 </a>
             </div>
         </section>
 
         <!-- Shopping Section -->
         <section id="shopping" class="mb-20">
-            <h2 class="text-3xl font-bold mb-4" data-translate="sections.shopping.title">Where to Shop</h2>
+            <h2 class="text-3xl font-bold mb-4 section-title" data-translate="sections.shopping.title">Where to Shop</h2>
             <p class="text-gray-600 mb-8" data-translate="sections.shopping.subtitle">Curated shopping destinations</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://www.endclothing.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">END.</h3>
-                    <p class="text-gray-600">Premium fashion and streetwear</p>
+                <a href="https://www.endclothing.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.endclothing.com/favicon.ico" alt="END. Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">END.</h3>
+                        <p class="text-gray-600">Premium fashion and streetwear</p>
+                    </div>
                 </a>
-                <a href="https://www.uniqlo.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">Uniqlo</h3>
-                    <p class="text-gray-600">Quality basics and essentials</p>
+                <a href="https://www.uniqlo.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.uniqlo.com/favicon.ico" alt="Uniqlo Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Uniqlo</h3>
+                        <p class="text-gray-600">Quality basics and essentials</p>
+                    </div>
                 </a>
-                <a href="https://www.farfetch.com/mens" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">Farfetch</h3>
-                    <p class="text-gray-600">Luxury and designer fashion</p>
+                <a href="https://www.farfetch.com/mens" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.farfetch.com/favicon.ico" alt="Farfetch Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Farfetch</h3>
+                        <p class="text-gray-600">Luxury and designer fashion</p>
+                    </div>
                 </a>
             </div>
         </section>
 
         <!-- Style Guides Section -->
         <section id="guides" class="mb-20">
-            <h2 class="text-3xl font-bold mb-4" data-translate="sections.guides.title">Style Guides</h2>
+            <h2 class="text-3xl font-bold mb-4 section-title" data-translate="sections.guides.title">Style Guides</h2>
             <p class="text-gray-600 mb-8" data-translate="sections.guides.subtitle">Learn how to dress better</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://www.permanentstyle.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">Permanent Style</h3>
-                    <p class="text-gray-600">Classic menswear and tailoring</p>
+                <a href="https://www.permanentstyle.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.permanentstyle.com/favicon.ico" alt="Permanent Style Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Permanent Style</h3>
+                        <p class="text-gray-600">Classic menswear and tailoring</p>
+                    </div>
                 </a>
-                <a href="https://putthison.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">Put This On</h3>
-                    <p class="text-gray-600">Men's style for the average guy</p>
+                <a href="https://putthison.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://putthison.com/favicon.ico" alt="Put This On Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Put This On</h3>
+                        <p class="text-gray-600">Menswear style guide</p>
+                    </div>
                 </a>
-                <a href="https://www.hespokestyle.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">He Spoke Style</h3>
-                    <p class="text-gray-600">Classic and contemporary style advice</p>
+                <a href="https://www.hespokestyle.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.hespokestyle.com/favicon.ico" alt="He Spoke Style Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">He Spoke Style</h3>
+                        <p class="text-gray-600">Personal style advice</p>
+                    </div>
                 </a>
             </div>
         </section>
 
         <!-- Community Section -->
         <section id="community" class="mb-20">
-            <h2 class="text-3xl font-bold mb-4" data-translate="sections.community.title">Community & Forums</h2>
+            <h2 class="text-3xl font-bold mb-4 section-title" data-translate="sections.community.title">Community & Forums</h2>
             <p class="text-gray-600 mb-8" data-translate="sections.community.subtitle">Join the conversation</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://www.reddit.com/r/malefashionadvice/" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">r/malefashionadvice</h3>
-                    <p class="text-gray-600">Reddit's largest men's fashion community</p>
+                <a href="https://www.reddit.com/r/malefashionadvice" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.reddit.com/favicon.ico" alt="Reddit Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">r/malefashionadvice</h3>
+                        <p class="text-gray-600">Reddit's men's fashion community</p>
+                    </div>
                 </a>
-                <a href="https://www.styleforum.net" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">StyleForum</h3>
-                    <p class="text-gray-600">Discussion forum for fashion enthusiasts</p>
+                <a href="https://www.styleforum.net" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.styleforum.net/favicon.ico" alt="StyleForum Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">StyleForum</h3>
+                        <p class="text-gray-600">Classic menswear discussion</p>
+                    </div>
                 </a>
-                <a href="https://www.askandyaboutclothes.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl">
-                    <h3 class="font-semibold text-xl mb-2">Ask Andy</h3>
-                    <p class="text-gray-600">Classic menswear community</p>
+                <a href="https://www.askandyaboutclothes.com" target="_blank" class="nav-item bg-white p-6 rounded-lg shadow-sm hover:shadow-xl flex items-center space-x-4">
+                    <img src="https://www.askandyaboutclothes.com/favicon.ico" alt="Ask Andy Logo" class="site-logo">
+                    <div>
+                        <h3 class="font-semibold text-xl mb-2">Ask Andy</h3>
+                        <p class="text-gray-600">Traditional menswear forum</p>
+                    </div>
                 </a>
             </div>
         </section>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <div class="font-bold text-2xl mb-4" data-translate="siteTitle">StyleDude</div>
             <p class="text-gray-400">© 2024 StyleDude. All rights reserved.</p>
